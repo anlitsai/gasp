@@ -1064,5 +1064,13 @@ OJ248-20200503@140151-R_Astrodon_2018_calib.fits	3	fovout
 ON231-20200504@141414-R_Astrodon_2018_calib.fits	3	fovout
 S5_0716+71-20200503@135306-R_Astrodon_2018_calib.fits	3	fovout
 S5_0716+71-20200503@135719-R_Astrodon_2018_calib.fits	3	fovout
+3C273-20200503@134252-R_Astrodon_2018_calib.fits	3
+3C345-20200503@164746-R_Astrodon_2018_calib.fits	3
+3C371-20200503@170940-R_Astrodon_2018_calib.fits	3
+4C29-45-20200503@131952-R_Astrodon_2018_calib.fits	3
+4C38-41-20200503@164039-R_Astrodon_2018_calib.fits	3
+4C51-37-20200503@170221-R_Astrodon_2018_calib.fits	3
+DA406-20200503@163240-R_Astrodon_2018_calib.fits	3
+Mkn421-20200502@150934-R_Astrodon_2018_calib.fits	3
 
 
