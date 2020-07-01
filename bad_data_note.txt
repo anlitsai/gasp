@@ -1117,6 +1117,8 @@ ON231-20200601@153932-R_Astrodon_2018_calib.fits	2	bigerror,badfit,moon(R=15.22,
 ON231-20200601@154243-R_Astrodon_2018_calib.fits	2	bigerror,badfit,moon(R=15.06,dR=0.40)
 ON231-20200602@162844-R_Astrodon_2018_calib.fits	2	bigerror,badfit,moon(R=14.70,dR=0.37)
 ON231-20200615@124539-R_Astrodon_2018_calib.fits	3	satellite
+ON231-20200615@124912-R_Astrodon_2018_calib.fits	3	satellite
 S4_0954+65-20200615@122526-R_Astrodon_2018_calib.fits	3	satellite
+S4_0954+65-20200615@122841-R_Astrodon_2018_calib.fits	3	satellite
 3C66A-20200603@202512-R_Astrodon_2018_calib.fits	3	flat
 
