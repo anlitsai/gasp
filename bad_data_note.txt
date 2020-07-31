@@ -1136,3 +1136,4 @@ S4_0954+65-20200615@122526-R_Astrodon_2018_calib.fits	3	satellite
 S4_0954+65-20200615@122841-R_Astrodon_2018_calib.fits	3	satellite
 3C66A-20200603@202512-R_Astrodon_2018_calib.fits	3	flat
 
+
