@@ -5,7 +5,8 @@ a=$1
 search_no_wcs.py $a
 # upload no_wcs_files to ycc and modify them
 
-cd $a
+b='wcsfixed_'$a
+cd $b
 ln -s ../cp_wcsfixed_file.sh ./
 ./cp_wcsfixed_file.sh
 
