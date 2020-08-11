@@ -9,8 +9,3 @@ for j in $b;do
   python slt_calibration_science_calibration_180S.py $j | tee slt_calibration_science_calibration_180S_$j.log
 done
 
-
-
-
-
-
