@@ -1142,7 +1142,6 @@ S4_0954+65-20200615@122841-R_Astrodon_2018_calib.fits	3	satellite
 3C371-20200724@140643-R_Astrodon_2018_calib.fits	4	bigerror(R=14.08,dR=0.09)
 3C371-20200731@141239-R_Astrodon_2018_calib.fits	2	bigerror(R=14.05,dR=0.13)
 3C371-20200731@163916-R_Astrodon_2018_calib.fits	2	bigerror(R=14.02,dR=0.17)
-3C371-20200731@163916-R_Astrodon_2018_calib.fits	2	bigerror(R=14.02,dR=0.17)
 4C38-41-20200724@133804-R_Astrodon_2018_calib.fits	2	bigerror(R=17.20,dR=0.16)
 4C38-41-20200724@134118-R_Astrodon_2018_calib.fits	2	bigerror(R=17.22,dR=0.14)
 4C38-41-20200725@131039-R_Astrodon_2018_calib.fits	2	bigerror(R=17.08,dR=0.22)
