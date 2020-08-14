@@ -715,7 +715,6 @@ S4_0954+65-20191126@203639-R_Astrodon_2018_calib.fits	3	fovout
 S4_0954+65-20191130@190057-R_Astrodon_2018_calib.fits	2	refstar_fovout(Rmag=15.72,dR=0.06)
 S5_0716+71-20191117@174931-R_Astrodon_2018.fts	1	nowcs,fovout
 S5_0716+71-20191117@175351-R_Astrodon_2018.fts	1	nowcs,fovout
-
 3C345-20191214@213817-R_Astrodon_2018_calib.fits	2	cloudy(Rmag=17.53,dR=0.39)
 3C454-3-20191201@112314-R_Astrodon_2018.fts	1	nowcs,fovout
 3C454-3-20191201@112734-R_Astrodon_2018.fts	1	nowcs,fovout
@@ -1064,14 +1063,53 @@ OJ248-20200503@140151-R_Astrodon_2018_calib.fits	3	fovout
 ON231-20200504@141414-R_Astrodon_2018_calib.fits	3	fovout
 S5_0716+71-20200503@135306-R_Astrodon_2018_calib.fits	3	fovout
 S5_0716+71-20200503@135719-R_Astrodon_2018_calib.fits	3	fovout
-3C273-20200503@134252-R_Astrodon_2018_calib.fits	3
-3C345-20200503@164746-R_Astrodon_2018_calib.fits	3
-3C371-20200503@170940-R_Astrodon_2018_calib.fits	3
-4C29-45-20200503@131952-R_Astrodon_2018_calib.fits	3
-4C38-41-20200503@164039-R_Astrodon_2018_calib.fits	3
-4C51-37-20200503@170221-R_Astrodon_2018_calib.fits	3
-DA406-20200503@163240-R_Astrodon_2018_calib.fits	3
-Mkn421-20200502@150934-R_Astrodon_2018_calib.fits	3
+3C273-20200503@134252-R_Astrodon_2018_calib.fits	3	fovout
+3C345-20200503@164746-R_Astrodon_2018_calib.fits	3	fovout
+3C371-20200503@170940-R_Astrodon_2018_calib.fits	3	fovout
+4C29-45-20200503@131952-R_Astrodon_2018_calib.fits	3	fovout
+4C38-41-20200503@164039-R_Astrodon_2018_calib.fits	3	fovout
+4C51-37-20200503@170221-R_Astrodon_2018_calib.fits	3	fovout
+DA406-20200503@163240-R_Astrodon_2018_calib.fits	3	fovout
+Mkn501-20200503@165456-R_Astrodon_2018_calib.fits	3	fovout
+OJ287-20200509@134232-R_Astrodon_2018_calib.fits	3	fovout
+ON231-20200503@133530-R_Astrodon_2018_calib.fits	3	fovout
+3C279-20200508@155641-R_Astrodon_2018_calib.fits	2	outlier(R=17.00,dR=0.16)
+3C279-20200508@160000-R_Astrodon_2018_calib.fits	2	outlier(R=16.76,dR=0.13)
+3C345-20200508@161915-R_Astrodon_2018_calib.fits	2	bigerror(R=17.75,dR=0.20)
+3C345-20200508@162234-R_Astrodon_2018_calib.fits	2	bigerror,outlier(R=17.17,dR=0.16)
+3C371-20200508@164036-R_Astrodon_2018_calib.fits	2	bigerror(R=14.04,dR=0.06)
+3C371-20200508@164402-R_Astrodon_2018_calib.fits	2	bigerror(R=13.96,dR=0.06)
+3C371-20200515@181556-R_Astrodon_2018_calib.fits	2	bigerror(R=14.07,dR=0.13)
+3C371-20200515@181915-R_Astrodon_2018_calib.fits	2	bigerror(R=14.02,dR=0.13)
+4C29-45-20200501@143625-R_Astrodon_2018_calib.fits	2	bigerror(R=16.69,dR=0.24)
+4C29-45-20200508@145002-R_Astrodon_2018_calib.fits	2	bigerror(R=16.74,dR=0.18)
+4C29-45-20200508@145339-R_Astrodon_2018_calib.fits	2	outlier,bigerror(R=15.08,dR=0.27)
+4C38-41-20200508@161236-R_Astrodon_2018_calib.fits	2	outlier,bigerror(R=16.78,dR=0.18)
+4C38-41-20200508@161553-R_Astrodon_2018_calib.fits	2	outlier,bigerror(R=16.58,dR=0.25)
+4C51-37-20200503@170558-R_Astrodon_2018_calib.fits	2	outlier(R=18.53,dR=0.13)
+4C51-37-20200508@163310-R_Astrodon_2018_calib.fits	2	badfit,bigerror(R=17.64,dR=0.33)
+4C51-37-20200508@163631-R_Astrodon_2018_calib.fits	2	badfit,bigerror(R=17.47,dR=0.35)
+4C51-37-20200515@180644-R_Astrodon_2018_calib.fits	2	badfit,bigerror(R=18.36,dR=0.24)
+4C51-37-20200515@181003-R_Astrodon_2018_calib.fits	2	badfit,bigerror(R=17.50,dR=0.21)
+4C71-07-20200502@145526-R_Astrodon_2018_calib.fits	2	outlier,bigerror(R=16.23,dR=0.23)
+4C71-07-20200508@142730-R_Astrodon_2018_calib.fits	2	badfit,bigerror(R=17.01,dR=0.27)
+4C71-07-20200508@143051-R_Astrodon_2018_calib.fits	2	badfit,bigerror(R=16.66,dR=0.23)
+4C71-07-20200509@135014-R_Astrodon_2018_calib.fits	2	badfit,bigerror(R=16.33,dR=0.20)
+4C71-07-20200511@125529-R_Astrodon_2018_calib.fits	2	outlier(R=17.47,dR=0.35)
+DA406-20200504@160328-R_Astrodon_2018_calib.fits	2	toofaint(R=18.10,dR=0.15)
+DA406-20200508@160537-R_Astrodon_2018_calib.fits	2	outlier(R=16.78,dR=0.15)
+DA406-20200508@160858-R_Astrodon_2018_calib.fits	2	outlier(R=17.16,dR=0.18)
+Mkn421-20200501@132822-R_Astrodon_2018_calib.fits	4	bigerror(R=12.84,dR=0.08)
+Mkn421-20200501@133137-R_Astrodon_2018_calib.fits	4	bigerror(R=12.78,dR=0.08)
+Mkn501-20200512@163123-R_Astrodon_2018_calib.fits	3	fovout
+OJ248-20200502@142542-R_Astrodon_2018_calib.fits	2	toofaint(R=nan,dR=nan)
+OJ248-20200508@141323-R_Astrodon_2018_calib.fits	2	bigerror,outlier(R=17.09,dR=0.13)
+OJ248-20200508@141642-R_Astrodon_2018_calib.fits	2	bigerror,outlier(R=16.79,dR=0.11)
+ON231-20200508@141642-R_Astrodon_2018_calib.fits	2	bigerror,outlier(R=16.79,dR=0.11)
+ON231-20200513@171812-R_Astrodon_2018_calib.fits	3	badpix
+S4_0954+65-20200501@132119-R_Astrodon_2018_calib.fits	4	bigerror,badfit(R=15.12,dR=0.08)
+S5_0716+71-20200501@130723-R_Astrodon_2018_calib.fits	2	outlier,badfit(R=13.33,dR=0.09)
+S5_0716+71-20200501@131038-R_Astrodon_2018_calib.fits	2	bigerror,badfit(R=13.03,dR=0.18)
 3C273-20200601@154630-R_Astrodon_2018.fts	1	moon
 3C273-20200601@154941-R_Astrodon_2018.fts	1	moon
 3C279-20200601@155316-R_Astrodon_2018.fts	1	moon
