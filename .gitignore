@@ -1,7 +1,9 @@
 old_code/*
 20*/*
 astrometry*/*
-dat*/*
+data_*/*
+data_done/*  
+dat_dir/*
 fits/*
 bad_data/*
 log/*
