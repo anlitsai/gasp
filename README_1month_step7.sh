@@ -10,5 +10,5 @@ for i in $a;do find ./$i|grep dat;done > dat.list
 
 id=`for i in $a;do find ./$i|grep dat;done| cut -d '/' -f5 | cut -d _ -f1|sort|uniq`
 #for i in $id; do echo $i;cat dat.list|grep $i;done
-for i in $id; do echo $i;f=`cat dat.list|grep $i`;cat $f |sort > ./Rmag_InstMag/dat_file/$i"_LuS_20180401-now.dat";done
+for i in $id; do echo $i;f=`cat dat.list|grep $i`;cat $f |sort > ./dat_file/$i"_LuS_20180401-now.dat";done
 
