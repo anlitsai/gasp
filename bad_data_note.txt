@@ -1213,3 +1213,5 @@ KS1510-08-20200724@132329-R_Astrodon_2018_calib.fits	2	outlier,toobright(R=15.78
 ES2344+514-20200714@143256-R_Astrodon_2018_calib.fits	2	outlier(R=14.30,dR=0.08)
 Mkn501-20200721@151429-R_Astrodon_2018_calib.fits	2	outlier(R=13.24,dR=0.01)
 Mkn501-20200721@151743-R_Astrodon_2018_calib.fits	2	outlier(R=13.24,dR=0.01)
+
+
