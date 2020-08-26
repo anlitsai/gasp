@@ -1,3 +1,5 @@
+#!/bin/bash
+
 name='gasp'
 datetime=`date +%Y%m%d-%H%M`
 comment='update_'$datetime
