@@ -1216,4 +1216,3 @@ Mkn501-20200721@151743-R_Astrodon_2018_calib.fits	2	outlier(R=13.24,dR=0.01)
 CTA102-20200818@153631-R_Astrodon_2018.fts	1	nowcs,blank
 CTA102-20200818@153952-R_Astrodon_2018.fts	1	nowcs,blank
 
-
