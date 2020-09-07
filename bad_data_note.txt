@@ -1215,5 +1215,15 @@ Mkn501-20200721@151429-R_Astrodon_2018_calib.fits	2	outlier(R=13.24,dR=0.01)
 Mkn501-20200721@151743-R_Astrodon_2018_calib.fits	2	outlier(R=13.24,dR=0.01)
 CTA102-20200818@153631-R_Astrodon_2018.fts	1	nowcs,blank
 CTA102-20200818@153952-R_Astrodon_2018.fts	1	nowcs,blank
+3C345-20200818@152304-R_Astrodon_2018_calib.fits	2	toofaint(R=18.01,dR=0.09)
+3C371-20200819@182130-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=14.02,dR=0.21)
+4C51-37-20200806@172020-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=18.16,dR=0.22)
+4C51-37-20200806@172338-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=17.69,dR=0.20)
+4C51-37-20200818@152701-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=18.13,dR=0.19)
+4C51-37-20200818@153021-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=18.06,dR=0.18)
+CTA102-20200806@173647-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=16.57,dR=0.79)
+CTA102-20200806@174006-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=16.33,dR=0.45)
+CTA102-20200819@182936-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=17.00,dR=0.19)
+PKS2155-304-20200830@174905-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=14.03,dR=0.75)
 
 
