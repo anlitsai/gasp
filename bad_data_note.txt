@@ -1224,6 +1224,8 @@ CTA102-20200818@153952-R_Astrodon_2018.fts	1	nowcs,blank
 CTA102-20200806@173647-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=16.57,dR=0.79)
 CTA102-20200806@174006-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=16.33,dR=0.45)
 CTA102-20200819@182936-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=17.00,dR=0.19)
+PKS2155-304-20200819@184106-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=13.86,dR=0.19)
 PKS2155-304-20200830@174905-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=14.03,dR=0.75)
+PKS2155-304-20200830@175223-R_Astrodon_2018_calib.fits	3	flat
 
 
