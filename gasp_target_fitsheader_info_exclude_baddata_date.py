@@ -354,8 +354,8 @@ print(list_baddata)
 f_log.write(str(list_baddata)+'\n')
 
 
-head_info_2='1.ID|2.DateObs|3.TimeObs|4.Filename|5.Object|6.RA_hhmmss|7.DEC_ddmmss|8.RA_deg|9.DEC_deg|10.RA_pix|11.Dec_pix|12.FilterName|13.JD|14.ExpTime_sec|15.Zmag|16.FWHM|17.Altitude|18.Airmass'
-head_info='ID|DateObs|TimeObs|Filename|Object|RA_hhmmss|DEC_ddmmss|RA_deg|DEC_deg|RA_pix|Dec_pix|FilterName|JD|ExpTime_sec|Zmag|FWHM|Altitude|Airmass'
+head_info='1.ID|2.DateObs|3.TimeObs|4.Filename|5.Object|6.RA_hhmmss|7.DEC_ddmmss|8.RA_deg|9.DEC_deg|10.RA_pix|11.Dec_pix|12.FilterName|13.JD|14.ExpTime_sec|15.Zmag|16.FWHM|17.Altitude|18.Airmass'
+#head_info='ID|DateObs|TimeObs|Filename|Object|RA_hhmmss|DEC_ddmmss|RA_deg|DEC_deg|RA_pix|Dec_pix|FilterName|JD|ExpTime_sec|Zmag|FWHM|Altitude|Airmass'
 f_info.write(head_info+'\n')
 
 k=0
