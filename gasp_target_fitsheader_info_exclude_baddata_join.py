@@ -49,6 +49,14 @@ file_join='gasp_target_fitsheader_info_exclude_baddata_join.txt'
 
 df_out.to_csv(file_join,sep='|',index=False)
 
+head_info_1='ID|DateObs|TimeObs|Filename|Object|RA_hhmmss|DEC_ddmmss|RA_deg|DEC_deg|RA_pix|Dec_pix|FilterName|JD|ExpTime_sec|Zmag|FWHM|Altitude|Airmass'
+head_info_2='1.ID|2.DateObs|3.TimeObs|4.Filename|5.Object|6.RA_hhmmss|7.DEC_ddmmss|8.RA_deg|9.DEC_deg|10.RA_pix|11.Dec_pix|12.FilterName|13.JD|14.ExpTime_sec|15.Zmag|16.FWHM|17.Altitude|18.Airmass'
+
+cmd_replace_head='find ./|grep calib | grep slt201908[1-3][0-9]| cut -d / -f3 | sort |uniq'
+list_file_sci1=os.popen(cmd_replace_head,"r").read().splitlines()
+
+
+
 print('')
 print('... join all table files to '+file_join+' ...')
 print('')
