@@ -1,3 +1,6 @@
+# generate light curve plot for all targets
+# before run this script, remember to clean the directory Rmag_InstMag
+
 a=`ls  -d Rmag_InstMag/annu_w1_20????01*/`
 for i in $a;do find ./$i|grep dat;done > dat.list
 #for i in $a;do  find ./$i|grep dat;done |sort -t '/' -k4,4 -k3,3n

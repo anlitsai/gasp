@@ -1,3 +1,4 @@
+# generate NCU Lulin Observation target list
 
 date=`cat gasp_target_fitsheader_info_exclude_baddata_join.txt|tail -1|cut -d"|" -f2|sed 's/-//g'`
 file=NCU_gasp_daily_target_until_$date.txt
