@@ -1228,3 +1228,4 @@ PKS2155-304-20200819@184106-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=13.
 PKS2155-304-20200830@174905-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=14.03,dR=0.75)
 PKS2155-304-20200830@175223-R_Astrodon_2018_calib.fits	3	flat
 
+
