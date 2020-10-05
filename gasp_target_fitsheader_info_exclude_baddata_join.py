@@ -28,8 +28,7 @@ df10=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_202007.txt',sep='|
 df11=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_202008.txt',sep='|')
 df12=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_202009.txt',sep='|')
 
-#df_all=pd.concat([df01,df02,df03,df04,df05,df06,df07,df08,df09,df10,df11,df12]).reset_index(drop=True)
-df_all=pd.concat([df01,df02,df03,df04,df05,df06,df07,df08,df09,df10,df11]).reset_index(drop=True)
+df_all=pd.concat([df01,df02,df03,df04,df05,df06,df07,df08,df09,df10,df11,df12]).reset_index(drop=True)
 #print(df_all)
 #print(df_all.ID)
 
@@ -37,13 +36,18 @@ df_all=pd.concat([df01,df02,df03,df04,df05,df06,df07,df08,df09,df10,df11]).reset
 #idx=df_all.values
 idx=df_all.index.values
 #print(idx)
+#sys.exit(0)
 
 ID=idx+1
 #print(ID)
+#sys.exit(0)
 
 df_out=df_all
-df_out.ID=ID
-#print(df_out.ID)
+#df_out.col_ID=ID
+#print(df_out.col_ID)
+df_out[df_out.columns[0]]=ID
+print(df_out[df_out.columns[0]])
+#sys.exit(0)
 
 print(df_out)
 
