@@ -12,7 +12,8 @@ a=$1
 #c='Mkn421'
 #c='3C454-3'
 #c='3C371'
-c='PKS2155-304'
+#c='PKS2155-304'
+c='L-Lacertae'
 
 year=`echo $a|cut -c-4`
 month=`echo $a|cut -c5-6`

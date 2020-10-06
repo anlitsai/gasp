@@ -14,7 +14,6 @@ DA406
 ES2344+514
 KS1510-08
 L-Lacertae
-BL-Lacertae
 Mkn421
 Mkn501
 OJ248

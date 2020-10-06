@@ -72,10 +72,10 @@ filter_ID='R'
 #filter_ID=sys.argv[1]
 
 #date1=input("From which date you are going to process (ex: 20190810)? ")
-#date1='20191101'
+#date1='20200901'
 date1=sys.argv[1]
 #date2=input("Till which date you are going to process (ex: 20191031)? ")
-#date2='20191130'
+#date2='20200930'
 date2=sys.argv[2]
 
 date_from = datetime.datetime(int(date1[0:4]),int(date1[4:6]),int(date1[6:8]))
@@ -105,7 +105,7 @@ print(df_info)
 #obj_name='AO0235+16'
 #obj_name='DA406'
 obj_name=sys.argv[3]
-
+print(obj_name)
 
 
 #dir_obj=filter_ID+'mag_InstMag/annu_w1_'+date1+'-'+date2+'/*'+obj_name+'/'
@@ -122,8 +122,12 @@ file_refstar='gasp_refStar_radec_annu.txt'
 
 df_refstar=pd.read_csv(file_refstar,sep='|')
 #print(df_refstar)
-idx_refstar=df_refstar[df_refstar['ObjectName']==obj_name].index.tolist()
+#idx_refstar=df_refstar[df_refstar['ObjectName']==obj_name].index.tolist()
+idx_refstar=df_refstar[df_refstar['ObjectName'].str.contains(obj_name)].index.tolist()
+#idx_refstar=df_refstar[df_refstar['ObjectName'].str.match(obj_name)].index.tolist()
 #print(idx_refstar)
+#sys.exit(0)
+
 n_refstar=len(idx_refstar)
 refstarID=['']*n_refstar
 #print('number of reference stars : ',n_refstar)
@@ -186,7 +190,8 @@ print('-----------------------')
 #filter_ID=sys.argv[3]
 df_info['DateObs'] = pd.to_datetime(df_info['DateObs'])
 #df_info['2.DateObs'] = pd.to_datetime(df_info['2.DateObs'])
-idx_fitsheader=df_info[(df_info['Object']==obj_name) & (df_info['FilterName'].str.contains(filter_ID)) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
+#idx_fitsheader=df_info[(df_info['Object']==obj_name) & (df_info['FilterName'].str.contains(filter_ID)) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
+idx_fitsheader=df_info[(df_info['Object'].str.contains(obj_name)) & (df_info['FilterName'].str.contains(filter_ID)) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
 #idx_fitsheader=df_info[(df_info['5.Object']==obj_name) & (df_info['12.FilterName'].str.contains(filter_ID)) & (df_info['2.DateObs']>=date_from) & (df_info['2.DateObs']<=date_end)].index
 
 #idx_fitsheader=df_info[(df_info['Object']==obj_name) & (df_info['FilterName']==filter_name) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
@@ -1020,7 +1025,8 @@ JD_out_keep=df_Rmag_keep['JD'].map('{:.5f}'.format)
 Rmag_out_keep=df_Rmag_keep['Rmag'].map('{:.3f}'.format)
 eRmag_out_keep=df_Rmag_keep['ErrorRmag'].map('{:.3f}'.format)
 
-iau_name=df_refstar.loc[df_refstar['ObjectName']==obj_name].iloc[0]['IAU_Name']
+#iau_name=df_refstar.loc[df_refstar['ObjectName']==obj_name].iloc[0]['IAU_Name']
+iau_name=df_refstar.loc[df_refstar['ObjectName'].str.contains(obj_name)].iloc[0]['IAU_Name']
 iau_name_short=iau_name[0:4]
 
 today=datetime.date.today()
