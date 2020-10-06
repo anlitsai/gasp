@@ -46,7 +46,7 @@ df_out=df_all
 #df_out.col_ID=ID
 #print(df_out.col_ID)
 df_out[df_out.columns[0]]=ID
-print(df_out[df_out.columns[0]])
+#print(df_out[df_out.columns[0]])
 #sys.exit(0)
 
 print(df_out)

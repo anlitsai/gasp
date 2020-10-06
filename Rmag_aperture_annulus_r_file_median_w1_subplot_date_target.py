@@ -97,6 +97,7 @@ print(df_info)
 #obj_name='3C273'
 #obj_name='ES2344+514'
 #obj_name='L-Lacertae'
+#obj_name='BL-Lacertae'
 #obj_name='4C38-41'
 #obj_name='4C71-07'
 #obj_name='4C29-45'
@@ -107,7 +108,9 @@ obj_name=sys.argv[3]
 
 
 
+#dir_obj=filter_ID+'mag_InstMag/annu_w1_'+date1+'-'+date2+'/*'+obj_name+'/'
 dir_obj=filter_ID+'mag_InstMag/annu_w1_'+date1+'-'+date2+'/'+obj_name+'/'
+
 print('... will generate files in: ./'+dir_obj)
 if os.path.exists(dir_obj):
     shutil.rmtree(dir_obj)
@@ -182,12 +185,16 @@ print('-----------------------')
 #filter_ID='R'
 #filter_ID=sys.argv[3]
 df_info['DateObs'] = pd.to_datetime(df_info['DateObs'])
+#df_info['2.DateObs'] = pd.to_datetime(df_info['2.DateObs'])
 idx_fitsheader=df_info[(df_info['Object']==obj_name) & (df_info['FilterName'].str.contains(filter_ID)) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
+#idx_fitsheader=df_info[(df_info['5.Object']==obj_name) & (df_info['12.FilterName'].str.contains(filter_ID)) & (df_info['2.DateObs']>=date_from) & (df_info['2.DateObs']<=date_end)].index
+
 #idx_fitsheader=df_info[(df_info['Object']==obj_name) & (df_info['FilterName']==filter_name) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
 print(idx_fitsheader)
 #obj_name=df_info['Object'][idx_fitsheader]
 
 fits_ori=df_info['Filename'][idx_fitsheader]
+#fits_ori=df_info['4.Filename'][idx_fitsheader]
 print(fits_ori)
 
 #sys.exit(0)
@@ -294,8 +301,11 @@ calendar_date=['']*n_idx
 
 
 JD=df_info['JD'][idx_fitsheader] 
+#JD=df_info['13.JD'][idx_fitsheader] 
+#print(JD)
 ID=df_info['ID'][idx_fitsheader] 
-
+#ID=df_info['1.ID'][idx_fitsheader] 
+#print(ID)
 
 #sys.exit(0)
 #=======================
@@ -913,6 +923,7 @@ print()
 df_out=df_info.iloc[idx_fitsheader_canfit]
 pd.options.mode.chained_assignment = None  # default='warn'
 df_out['JD']=df_out['JD'].map('{:.4f}'.format)
+#df_out['13.JD']=df_out['13.JD'].map('{:.4f}'.format)
 #df_out['Rmag']=pd.Series(Rmag_targets,index=df_out.index)
 df_out['Rmag']=Rmag_targets
 df_out['Rmag']=df_out['Rmag'].map('{:.4f}'.format)
@@ -999,6 +1010,7 @@ print(fits_ori[idx_fitsheader_keep])
 #sys.exit(0)
 df_out_keep=df_out
 df_out_keep=df_out_keep[~df_out_keep['ID'].isin(ID_skip)]
+#df_out_keep=df_out_keep[~df_out_keep['1.ID'].isin(ID_skip)]
 print(df_out_keep)
 n_out_keep=len(df_out_keep)
 # -----------------------------------
