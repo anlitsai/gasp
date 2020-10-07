@@ -8,12 +8,14 @@ a=$1
 #c='4C38-41'
 #c='DA406'
 #c='OJ49'
-#c='ON231 S4_0954+65'
+c='OJ287'
+#c='ON231'
+#c='S4_0954+65'
 #c='Mkn421'
 #c='3C454-3'
 #c='3C371'
 #c='PKS2155-304'
-c='L-Lacertae'
+#c='L-Lacertae'
 
 year=`echo $a|cut -c-4`
 month=`echo $a|cut -c5-6`

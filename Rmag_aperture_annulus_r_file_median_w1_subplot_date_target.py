@@ -105,7 +105,7 @@ print(df_info)
 #obj_name='AO0235+16'
 #obj_name='DA406'
 obj_name=sys.argv[3]
-print(obj_name)
+#print(obj_name)
 
 
 #dir_obj=filter_ID+'mag_InstMag/annu_w1_'+date1+'-'+date2+'/*'+obj_name+'/'
@@ -122,8 +122,8 @@ file_refstar='gasp_refStar_radec_annu.txt'
 
 df_refstar=pd.read_csv(file_refstar,sep='|')
 #print(df_refstar)
-#idx_refstar=df_refstar[df_refstar['ObjectName']==obj_name].index.tolist()
-idx_refstar=df_refstar[df_refstar['ObjectName'].str.contains(obj_name)].index.tolist()
+idx_refstar=df_refstar[df_refstar['ObjectName']==obj_name].index.tolist()
+#idx_refstar=df_refstar[df_refstar['ObjectName'].str.contains(obj_name)].index.tolist()
 #idx_refstar=df_refstar[df_refstar['ObjectName'].str.match(obj_name)].index.tolist()
 #print(idx_refstar)
 #sys.exit(0)
@@ -194,8 +194,15 @@ df_info['DateObs'] = pd.to_datetime(df_info['DateObs'])
 idx_fitsheader=df_info[(df_info['Object'].str.contains(obj_name)) & (df_info['FilterName'].str.contains(filter_ID)) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
 #idx_fitsheader=df_info[(df_info['5.Object']==obj_name) & (df_info['12.FilterName'].str.contains(filter_ID)) & (df_info['2.DateObs']>=date_from) & (df_info['2.DateObs']<=date_end)].index
 
+#print('obj_name: ', obj_name, type(obj_name))
+#print('filter_ID: ', filter_ID, type(filter_ID))
+#print(df_info[(df_info['Object']==obj_name)].index)
+#print(df_info[(df_info['Object'].str.contains(obj_name))].index)
+#print(df_info[(df_info['Filename'].str.contains(obj_name))].index)
+#print(df_info[(df_info['FilterName'].str.contains(filter_ID))].index)
+
 #idx_fitsheader=df_info[(df_info['Object']==obj_name) & (df_info['FilterName']==filter_name) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
-print(idx_fitsheader)
+print('idx_fitsheader: ',idx_fitsheader)
 #obj_name=df_info['Object'][idx_fitsheader]
 
 fits_ori=df_info['Filename'][idx_fitsheader]
@@ -213,7 +220,7 @@ df_cannotfit=df_baddata_note.loc[(df_baddata_note['NoteIdx']==3)].reset_index(dr
 n_cannotfit=len(df_cannotfit)
 print('... there are',n_cannotfit,'fits can not be fitted ...')
 list_cannotfit=df_cannotfit['filename'].tolist()
-print(list_cannotfit)
+# print(list_cannotfit)
 
 
 #idx_fitsheader
@@ -927,7 +934,7 @@ print()
 
 df_out=df_info.iloc[idx_fitsheader_canfit]
 pd.options.mode.chained_assignment = None  # default='warn'
-df_out['JD']=df_out['JD'].map('{:.4f}'.format)
+df_out['JD']=df_out['JD'].map('{:.5f}'.format)
 #df_out['13.JD']=df_out['13.JD'].map('{:.4f}'.format)
 #df_out['Rmag']=pd.Series(Rmag_targets,index=df_out.index)
 df_out['Rmag']=Rmag_targets
@@ -1025,9 +1032,12 @@ JD_out_keep=df_Rmag_keep['JD'].map('{:.5f}'.format)
 Rmag_out_keep=df_Rmag_keep['Rmag'].map('{:.3f}'.format)
 eRmag_out_keep=df_Rmag_keep['ErrorRmag'].map('{:.3f}'.format)
 
-#iau_name=df_refstar.loc[df_refstar['ObjectName']==obj_name].iloc[0]['IAU_Name']
-iau_name=df_refstar.loc[df_refstar['ObjectName'].str.contains(obj_name)].iloc[0]['IAU_Name']
+iau_name=df_refstar.loc[df_refstar['ObjectName']==obj_name].iloc[0]['IAU_Name']
+#iau_name=df_refstar.loc[df_refstar['ObjectName'].str.contains(obj_name)].iloc[0]['IAU_Name']
+#print('ObjectName: ',obj_name)
+#print('IAU_Name: ',iau_name)
 iau_name_short=iau_name[0:4]
+#print('IAU_Name_short: ', iau_name_short)
 
 today=datetime.date.today()
 #date_format=str(today.year)[2:4]+str(today.month)+str(today.day)
