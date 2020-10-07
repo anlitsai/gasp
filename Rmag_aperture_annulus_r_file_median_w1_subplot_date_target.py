@@ -189,10 +189,7 @@ print('-----------------------')
 #filter_ID='R'
 #filter_ID=sys.argv[3]
 df_info['DateObs'] = pd.to_datetime(df_info['DateObs'])
-#df_info['2.DateObs'] = pd.to_datetime(df_info['2.DateObs'])
-#idx_fitsheader=df_info[(df_info['Object']==obj_name) & (df_info['FilterName'].str.contains(filter_ID)) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
-idx_fitsheader=df_info[(df_info['Object'].str.contains(obj_name)) & (df_info['FilterName'].str.contains(filter_ID)) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
-#idx_fitsheader=df_info[(df_info['5.Object']==obj_name) & (df_info['12.FilterName'].str.contains(filter_ID)) & (df_info['2.DateObs']>=date_from) & (df_info['2.DateObs']<=date_end)].index
+idx_fitsheader=df_info[((df_info['Object']==obj_name)|(df_info['Object'].str.contains(obj_name))) & (df_info['FilterName'].str.contains(filter_ID)) & (df_info['DateObs']>=date_from) & (df_info['DateObs']<=date_end)].index
 
 #print('obj_name: ', obj_name, type(obj_name))
 #print('filter_ID: ', filter_ID, type(filter_ID))
@@ -313,10 +310,8 @@ calendar_date=['']*n_idx
 
 
 JD=df_info['JD'][idx_fitsheader] 
-#JD=df_info['13.JD'][idx_fitsheader] 
 #print(JD)
 ID=df_info['ID'][idx_fitsheader] 
-#ID=df_info['1.ID'][idx_fitsheader] 
 #print(ID)
 
 #sys.exit(0)
@@ -935,7 +930,6 @@ print()
 df_out=df_info.iloc[idx_fitsheader_canfit]
 pd.options.mode.chained_assignment = None  # default='warn'
 df_out['JD']=df_out['JD'].map('{:.5f}'.format)
-#df_out['13.JD']=df_out['13.JD'].map('{:.4f}'.format)
 #df_out['Rmag']=pd.Series(Rmag_targets,index=df_out.index)
 df_out['Rmag']=Rmag_targets
 df_out['Rmag']=df_out['Rmag'].map('{:.4f}'.format)
