@@ -53,10 +53,14 @@ cmd_search_file_sci='find ./'+month+' |grep GASP|grep fts|sort'
 list_file_sci=os.popen(cmd_search_file_sci,"r").read().splitlines()
 #print(list_file_sci)
 n_file_sci=len(list_file_sci)
-print('... total',n_file_sci,'files ...')
+
 
 outfile='search_no_wcs_'+month+'.txt'
 f=open(outfile,'w')
+
+msg0='... total',n_file_sci,'files ...'
+print(msg0)
+f.write(msg0+'\n')
 
 k=0
 for i in range(n_file_sci):
