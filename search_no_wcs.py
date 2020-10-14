@@ -58,7 +58,7 @@ n_file_sci=len(list_file_sci)
 outfile='search_no_wcs_'+month+'.txt'
 f=open(outfile,'w')
 
-msg0='... total',n_file_sci,'files ...'
+msg0='... total '+str(n_file_sci)+' files ...'
 print(msg0)
 f.write(msg0+'\n')
 
