@@ -129,7 +129,7 @@ for i in list_file_sci:
     ra=imhead['RA']
     dec=imhead['Dec']
 
-    print(i, "  ", idx_time)
+    print(i, "\t", idx_time)
     
 #sys.exit(0)
 
