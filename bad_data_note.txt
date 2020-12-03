@@ -1256,4 +1256,3 @@ Mkn501-20200904@135657-R_Astrodon_2018_calib.fits	2	bigerror(R=13.20,dR=0.36)
 OJ287-20200923@202824-R_Astrodon_2018_calib.fits	3	moon
 OJ287-20200923@203158-R_Astrodon_2018_calib.fits	2	moon(R=15.27,dR=0.06)
 
-
