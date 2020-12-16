@@ -2,7 +2,7 @@
 a=$1
 
 #step0
-search_no_wcs.py $a
+python search_no_wcs.py $a
 # upload no_wcs_files to ycc and modify them
 
 b='wcsfixed_'$a
