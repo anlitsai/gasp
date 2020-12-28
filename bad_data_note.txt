@@ -1306,4 +1306,3 @@ PKS0735+17-20201104@163340-R_Astrodon_2018_calib.fits	4	bigerror(R=16.55,dR=0.13
 PKS0735+17-20201104@163501-R_Astrodon_2018_calib.fits	4	bigerror(R=16.53,dR=0.10)
 PKS0735+17-20201104@173820-R_Astrodon_2018_calib.fits	4	bigerror(R=16.40,dR=0.11)
 
-
