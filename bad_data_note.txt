@@ -1261,6 +1261,9 @@ OJ287-20200923@203158-R_Astrodon_2018_calib.fits	2	moon(R=15.27,dR=0.06)
 4C51-37-20201026@124509-R_Astrodon_2018_calib.fits	2	cannotfit(R=nan,dR=nan)
 4C51-37-20201026@124828-R_Astrodon_2018_calib.fits	2	cannotfit(R=nan,dR=nan)
 4C71-07-20201014@173556-R_Astrodon_2018_calib.fits	3	fovout
+4C71-07-20201014@191523-R_Astrodon_2018_calib.fits	3	fovout
+4C71-07-20201015@202936-R_Astrodon_2018_calib.fits	3	fovout
+4C71-07-20201026@183806-R_Astrodon_2018_calib.fits	3	fovout
 AO0235+16-20201002@175634-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=18.61,dR=0.34)
 AO0235+16-20201002@175953-R_Astrodon_2018_calib.fits	4	toofaint,bigerror(R=17.59,dR=0.19)
 AO0235+16-20201002@185435-R_Astrodon_2018_calib.fits	4	toofaint,bigerror(R=17.48,dR=0.16)
