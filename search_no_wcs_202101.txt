@@ -1,0 +1,12 @@
+... total 861 files ...
+1) ./202101/slt20210105/wchen/wchen_03_GASP_01/3C279-20210105@202942-R_Astrodon_2018.fts
+2) ./202101/slt20210105/wchen/wchen_03_GASP_01/3C279-20210105@203302-R_Astrodon_2018.fts
+3) ./202101/slt20210105/wchen/wchen_03_GASP_01/CTA102-20210105@130415-R_Astrodon_2018.fts
+4) ./202101/slt20210105/wchen/wchen_03_GASP_01/CTA102-20210105@130832-R_Astrodon_2018.fts
+5) ./202101/slt20210109/wchen/wchen_03_GASP_01/S5_0716+71-20210109@203824-R_Astrodon_2018.fts
+6) ./202101/slt20210113/wchen/wchen_03_GASP_01/KS1510-08-20210113@205117-R_Astrodon_2018.fts
+7) ./202101/slt20210114/wchen/wchen_03_GASP_01/S5_0716+71-20210114@200656-R_Astrodon_2018.fts
+8) ./202101/slt20210115/wchen/wchen_03_GASP_01/BL-Lacertae-20210115@120159-R_Astrodon_2018.fts
+9) ./202101/slt20210117/wchen/wchen_03_GASP_01/S5_0716+71-20210117@204454-R_Astrodon_2018.fts
+... there are 9 files have no wcs coordinate ...
+... write file to search_no_wcs_202101.txt ...
