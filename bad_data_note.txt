@@ -1228,6 +1228,8 @@ CTA102-20200806@174006-R_Astrodon_2018_calib.fits	2	toofaint,outlier(R=16.33,dR=
 CTA102-20200819@182615-R_Astrodon_2018_calib.fits	2	toofaint,outlier(R=16.94,dR=0.11)
 CTA102-20200819@182936-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=17.00,dR=0.19)
 DA406-20200818@150206-R_Astrodon_2018_calib.fits	2	toofaint(R=17.41,dR=0.10)
+DA406-20200830@124846-R_Astrodon_2018_calib.fits	2	toofaint(R=17.84,dR=0.12)
+DA406-20200830@125205-R_Astrodon_2018_calib.fits	2	toofaint(R=18.07,dR=0.14)
 PKS2155-304-20200819@184106-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=13.86,dR=0.19)
 PKS2155-304-20200830@174905-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=14.03,dR=0.75)
 PKS2155-304-20200830@175223-R_Astrodon_2018_calib.fits	3	flat
@@ -1252,13 +1254,17 @@ CTA102-20200903@183941-R_Astrodon_2018_calib.fits	2	outlier(R=16.89,dR=0.17)
 CTA102-20200906@132904-R_Astrodon_2018_calib.fits	4	outlier(R=16.74,dR=0.05)
 DA406-20200901@115040-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=17.74,dR=0.31)
 DA406-20200901@115359-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=17.92,dR=0.36)
+DA406-20200902@125338-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=17.54,dR=0.20)
+DA406-20200902@125657-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(R=17.06,dR=0.14)
 KS1510-08-20200901@114256-R_Astrodon_2018_calib.fits	2	bigerror(R=16.03,dR=0.11)
 KS1510-08-20200901@114615-R_Astrodon_2018_calib.fits	2	outlier(R=16.53,dR=0.14)
 Mkn501-20200904@135657-R_Astrodon_2018_calib.fits	2	bigerror(R=13.20,dR=0.36)
 Mkn501-20200904@140013-R_Astrodon_2018_calib.fits	2	bigerror(R=13.23,dR=0.08)
 OJ287-20200923@202824-R_Astrodon_2018_calib.fits	3	moon
 OJ287-20200923@203158-R_Astrodon_2018_calib.fits	2	moon(R=15.27,dR=0.06)
-PKS0735+17-20200901@201225-R_Astrodon_2018_calib.fits	4	bigerror(R=16.40,dR=0.11)
+PKS0735+17-20200901@201225-R_Astrodon_2018_calib.fits	2	bigerror(R=16.40,dR=0.11)
+PKS2155-304-20200906@134340-R_Astrodon_2018_calib.fits	2	outlier(R=13.97,dR=0.06)
+PKS2155-304-20200906@134658-R_Astrodon_2018_calib.fits	2	outlier(R=13.96,dR=0.06)
 3C454-3-20201001@174801-R_Astrodon_2018_calib.fits	3	fovout
 3C454-3-20201002@173232-R_Astrodon_2018_calib.fits	2	outlier,bigerror(R=16.16,dR=0.12)
 3C454-3-20201002@183816-R_Astrodon_2018_calib.fits	2	bigerror(R=14.85,dR=0.19)
@@ -1319,7 +1325,7 @@ OJ248-20201130@153804-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(Rmag=16.98,
 OJ248-20201130@154124-R_Astrodon_2018_calib.fits	2	toofaint,bigerror(Rmag=17.26,dR=0.49)
 PKS0735+17-20201104@163020-R_Astrodon_2018_calib.fits	2	bigerror(R=16.48,dR=0.10)
 PKS0735+17-20201104@163340-R_Astrodon_2018_calib.fits	2	bigerror(R=16.55,dR=0.13)
-PKS0735+17-20201104@163501-R_Astrodon_2018_calib.fits	2	bigerror(R=16.53,dR=0.10)
+PKS0735+17-20201104@173501-R_Astrodon_2018_calib.fits	2	bigerror(R=16.53,dR=0.10)
 PKS0735+17-20201104@173820-R_Astrodon_2018_calib.fits	2	bigerror(R=16.40,dR=0.11)
 BL-Lacertae-20201231@124234-R_Astrodon_2018.fts	1	rain
 OJ287-20201216@185958-R_Astrodon_2018_calib.fits	3	fovout
@@ -1372,6 +1378,9 @@ PKS2155-304-20201216@110105-R_Astrodon_2018_calib.fits	2	faint,bigerror(R=13.02,
 BL-Lacertae-20210115@120159-R_Astrodon_2018.fts	1	rain
 CTA102-20210105@130415-R_Astrodon_2018.fts	1	rain
 CTA102-20210105@130832-R_Astrodon_2018.fts	1	rain
+KS1510-08-20210113@205117-R_Astrodon_2018.fts	5	ycccannotfix,astrometryfixed
 S5_0716+71-20210109@203824-R_Astrodon_2018.fts	1	flat
+S5_0716+71-20210114@200656-R_Astrodon_2018.fts	5	ycccannotfix,astrometryfixed
+S5_0716+71-20210117@204454-R_Astrodon_2018.fts	5	ycccannotfix,astrometryfixed
 
 
