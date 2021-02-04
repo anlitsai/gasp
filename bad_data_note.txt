@@ -1383,4 +1383,3 @@ S5_0716+71-20210109@203824-R_Astrodon_2018.fts	1	flat
 S5_0716+71-20210114@200656-R_Astrodon_2018.fts	5	ycccannotfix,astrometryfixed
 S5_0716+71-20210117@204454-R_Astrodon_2018.fts	5	ycccannotfix,astrometryfixed
 
-
