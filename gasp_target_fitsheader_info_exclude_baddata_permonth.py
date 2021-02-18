@@ -77,7 +77,7 @@ print(till_month)
 #dir_calib_sci=folder+'_calib_sci/'
 #print(dir_calib_sci)
 
-#yearmonth='202003'
+#yearmonth='201802'
 yearmonth=sys.argv[1]
 
 file_info='gasp_target_fitsheader_info_exclude_baddata_'+yearmonth+'.txt'
@@ -281,6 +281,7 @@ for i in list_file_sci:
         date_obs=imhead['DATE-OBS'].split('T',-1)[0]
         time_obs=imhead['TIME-OBS'].split('T',-1)[0]
         altitude=imhead['ALTITUDE']
+#        altitude=int(imhead['ALTITUDE'].split('m',-1)[0])
         airmass=imhead['AIRMASS']
         jd=imhead['JD']
         filter_name=imhead['FILTER']
@@ -319,8 +320,12 @@ for i in list_file_sci:
 #        print(sci_filter)
         idx_filter_time=sci_filter+"_"+idx_time
         info_sci=str(k)+' [DATE] '+date_obs+ ' [TIME] '+time_obs+' [FILE] '+str(filename_sci)+' [OBJ] '+str(obj)+' [RA_hhmmss] '+ra_hhmmss+' [DEC_ddmmss] '+dec_ddmmss+' [RA_deg] '+str(ra_deg)+' [DEC_deg] '+str(dec_deg)+' [ra_pix] '+str(ra_pix)+' [dec_pix] '+str(dec_pix)+' [FIL] '+filter_name+' [JD] '+str(jd)+' [EXPTIME] '+str(exptime)+' [ZMAG] '+str(zmag)+' [FWHM] '+str(fwhm)+' [ALT] '+str(altitude)+' [AIRMASS] '+str(airmass)
+#        print('--- info_sci ---')
 #        print(info_sci)
-        info_write=str(idx)+'|'+date_obs+'|'+time_obs+'|'+ str(filename_sci)+'|'+str(obj)+'|'+ra_hhmmss+'|'+dec_ddmmss+'|'+str('%.4f' %ra_deg)+'|'+str('%.4f' %dec_deg)+'|'+str('%.4f' %ra_pix)+'|'+str('%.4f' %dec_pix)+'|'+filter_name+'|'+str(jd)+'|'+str(exptime)+'|'+str('%.4f' %zmag)+'|'+str('%.4f' %fwhm)+'|'+str('%.4f' %altitude)+'|'+str('%.4f' %airmass)
+#        info_write=str(idx)+'|'+date_obs+'|'+time_obs+'|'+ str(filename_sci)+'|'+str(obj)+'|'+ra_hhmmss+'|'+dec_ddmmss+'|'+str('%.4f' %ra_deg)+'|'+str('%.4f' %dec_deg)+'|'+str('%.4f' %ra_pix)+'|'+str('%.4f' %dec_pix)+'|'+filter_name+'|'+str(jd)+'|'+str(exptime)+'|'+str('%.4f' %zmag)+'|'+str('%.4f' %fwhm)+'|'+str('%.4f' %altitude)+'|'+str('%.4f' %airmass)
+        info_write=str(idx)+'|'+date_obs+'|'+time_obs+'|'+ str(filename_sci)+'|'+str(obj)+'|'+ra_hhmmss+'|'+dec_ddmmss+'|'+str('%.4f' %ra_deg)+'|'+str('%.4f' %dec_deg)+'|'+str('%.4f' %ra_pix)+'|'+str('%.4f' %dec_pix)+'|'+filter_name+'|'+str(jd)+'|'+str(exptime)+'|'+str('%.4f' %zmag)+'|'+str('%.4f' %fwhm)+'|'+str(altitude)+'|'+str('%.4f' %airmass)
+#        print('--- info_write ---')
+#        print(info_write)
         f_log.write(info_sci+'\n')
         f_info.write(info_write+'\n')
     else:

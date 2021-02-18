@@ -4,7 +4,7 @@ a=$1
 
 # mannuly modify $c
 #c=`cat check_science_target_list.txt`
-c='4C71-07'
+#c='4C71-07'
 #c='4C38-41'
 #c='3C454-3'
 #c='DA406'
@@ -14,7 +14,7 @@ c='4C71-07'
 #c='S4_0954+65'
 #c='ON231'
 #c='Mkn421'
-#c='Mkn501'
+c='Mkn501'
 #c='3C454-3'
 #c='3C371'
 #c='PKS0735+17'

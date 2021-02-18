@@ -1382,4 +1382,6 @@ KS1510-08-20210113@205117-R_Astrodon_2018.fts	5	ycccannotfix,astrometryfixed
 S5_0716+71-20210109@203824-R_Astrodon_2018.fts	1	flat
 S5_0716+71-20210114@200656-R_Astrodon_2018.fts	5	ycccannotfix,astrometryfixed
 S5_0716+71-20210117@204454-R_Astrodon_2018.fts	5	ycccannotfix,astrometryfixed
+Mkn501-20170317@161820-R_30508_calib.fits	2	bigerror(Rmag=13.22,dR=0.08)
+Mkn501-20170317@162131-R_30508_calib.fits	2	bigerror(Rmag=13.13,dR=0.17)
 
