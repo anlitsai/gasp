@@ -1384,4 +1384,13 @@ S5_0716+71-20210114@200656-R_Astrodon_2018.fts	5	ycccannotfix,astrometryfixed
 S5_0716+71-20210117@204454-R_Astrodon_2018.fts	5	ycccannotfix,astrometryfixed
 Mkn501-20170317@161820-R_30508_calib.fits	2	bigerror(Rmag=13.22,dR=0.08)
 Mkn501-20170317@162131-R_30508_calib.fits	2	bigerror(Rmag=13.13,dR=0.17)
-
+Mkn501-20180413@162837-R_30508.fts	1	nowcs
+Mkn501-20180612@171653-R_30508_calib.fits	3	fovout
+Mkn501-20180612@172008-R_30508_calib.fits	3	fovout
+Mkn501-20180627@195711-R_30508_calib.fits	2	cloudy(Rmag=12.85,dR=0.07)
+Mkn501-20180711@171731-R_30508_calib.fits	2	flat
+Mkn501-20180711@172046-R_30508_calib.fits	2	flat
+Mkn501-20180612@172008-R_30508_calib.fits	3	fovout
+Mkn501-20180627@195711-R_30508_calib.new	2	cloudy(Rmag=12.85,dR=0.07)
+Mkn501-20180711@171731-R_30508_calib.new	2	flat
+Mkn501-20180711@172046-R_30508_calib.new	2	flat

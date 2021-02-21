@@ -24,7 +24,7 @@ c='Mkn501'
 #d1='20200801'
 #d2='20201231'
 d1='20170101'
-d2='20201031'
+d2='20191130'
 
 for i in $c;do python Rmag_aperture_annulus_r_file_median_w1_subplot_date_target.py $d1 $d2 $i | tee 'Rmag_aperture_annulus_r_file_median_w1_subplot_'$d1'-'$d2'_'$i'.log';done
 

@@ -209,9 +209,8 @@ print(fits_ori)
 #sys.exit(0)
 
 #=======================
-
-df_baddata_note=pd.read_csv('bad_data_note.txt',sep='\t')
-#print(df_baddata_note)
+df_baddata_note=pd.read_csv('bad_data_note.txt',sep='\t',error_bad_lines=False)
+print(df_baddata_note)
 
 df_cannotfit=df_baddata_note.loc[(df_baddata_note['NoteIdx']==3)].reset_index(drop=True)
 n_cannotfit=len(df_cannotfit)

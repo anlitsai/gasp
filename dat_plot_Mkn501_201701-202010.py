@@ -53,15 +53,18 @@ list_iauname=['1652+398']
 
 n_data=len(list_objname)
 
-fig,axs=plt.subplots(4,7,figsize=(20,16))
-fig.subplots_adjust(hspace=.5,wspace=0.5)
-axs=axs.ravel()
+fig=plt.figure()
+
+#fig,axs=plt.subplots(4,7,figsize=(20,16))
+#fig.subplots_adjust(hspace=.5,wspace=0.5)
+#axs=axs.ravel()
 
 for i in range(n_data):
     file_iau=list_iauname[i]
     file_obj=list_objname[i]
 
-    w1_file='dat_Mkn501_201701_202010/g'+file_iau[0:4]+'r_LuS_202019.dat'
+    #w1_file='dat_Mkn501_201701_202010/g'+file_iau[0:4]+'r_LuS_20200221.dat'
+    w1_file='g1652r_LuS_210221.dat'
     df_w1=pd.read_csv(w1_file,delim_whitespace=True,header=None,usecols=[0,1,2]) 
     JD1=df_w1[0].map('{:.5f}'.format).astype(np.float64)
 #    print(JD1)
@@ -69,14 +72,19 @@ for i in range(n_data):
 #    print(R1)
     eR1=df_w1[2]
 #    print(eR1)
-    
+
+    plt.errorbar(JD1,R1,yerr=eR1,linestyle='--',lw=1)  
+    plt.xlabel('JD')
+    plt.ylabel('Rmag')
+    plt.title(file_obj)
+    plt.gca().invert_yaxis()
 
 #    axs[i].errorbar(JD0,R0,yerr=eR0,linestyle='--',label='no w',lw=1)
-    axs[i].errorbar(JD1,R1,yerr=eR1,linestyle='--',lw=1)  
-    axs[i].set_xlabel('JD')
-    axs[i].set_ylabel('Rmag')
-    axs[i].set_title(file_obj)
-    axs[i].invert_yaxis()
+#    axs[i].errorbar(JD1,R1,yerr=eR1,linestyle='--',lw=1)  
+#    axs[i].set_xlabel('JD')
+#    axs[i].set_ylabel('Rmag')
+#    axs[i].set_title(file_obj)
+#    axs[i].invert_yaxis()
 #    axs[i].legend(loc='best')
     
 

@@ -19,7 +19,7 @@ id='g1652r'
 for i in $a;do find ./$i|grep dat|grep $id;done > $file_dat
 dat_list=`cat $file_dat`
 
-dat_Mkn501='g1652r_LuS_20200219.dat'
+dat_Mkn501='g1652r_LuS_20200220.dat'
 rm -rf $dat_Mkn501
 
 for i in $dat_list;do cat $i >> $dir_dat/$dat_Mkn501;done

@@ -17,7 +17,8 @@ import pandas as pd
 
 df01=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_201804-201901.txt',sep='|')
 df02=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_201902-201910.txt',sep='|')
-df03=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_201911-201912.txt',sep='|')
+#df03=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_201911-201912.txt',sep='|')
+df03=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_201911.txt',sep='|')
 df04=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_202001.txt',sep='|')
 df05=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_202002.txt',sep='|')
 df06=pd.read_csv('gasp_target_fitsheader_info_exclude_baddata_202003.txt',sep='|')
