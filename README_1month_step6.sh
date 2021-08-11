@@ -4,24 +4,28 @@ a=$1
 
 # mannuly modify $c
 #c=`cat check_science_target_list.txt`
+#c='3C273'
 #c='4C71-07'
+#c='4C29-45'
 #c='4C38-41'
+#c='3C345'
 #c='3C454-3'
+#c='3C371'
 #c='DA406'
-#c='OJ49'
+c='OJ49'
 #c='OJ248'
 #c='OJ287'
 #c='S4_0954+65'
+#c='S5_0716+71'
 #c='ON231'
 #c='Mkn421'
-c='Mkn501'
-#c='3C454-3'
-#c='3C371'
+#c='Mkn501'
 #c='PKS0735+17'
 #c='PKS2155-304'
 #c='L-Lacertae'
 #c='AO0235+16'
 #c='ES2344+514'
+#c='OJ248 OJ287 OJ49 ON231 PKS0735+17 S4_0954+65'
 
 year=`echo $a|cut -c-4`
 month=`echo $a|cut -c5-6`

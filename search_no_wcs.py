@@ -46,7 +46,7 @@ from astropy.visualization import simple_norm
 from photutils.utils import calc_total_error
 
 month=sys.argv[1]
-cmd_search_file_sci='find ./'+month+' |grep GASP|grep fts|sort'
+cmd_search_file_sci='find ./data/'+month+' |grep GASP|grep fts|sort'
 #cmd_search_file_sci='find ./20191? |grep GASP|grep fts|sort'
 #cmd_search_file_sci='find ./201??? |grep GASP|grep fts|sort'
 #print(cmd_search_file_sci)
@@ -55,7 +55,7 @@ list_file_sci=os.popen(cmd_search_file_sci,"r").read().splitlines()
 n_file_sci=len(list_file_sci)
 
 
-outfile='search_no_wcs_'+month+'.txt'
+outfile='./data/search_no_wcs_'+month+'.txt'
 f=open(outfile,'w')
 
 msg0='... total '+str(n_file_sci)+' files ...'

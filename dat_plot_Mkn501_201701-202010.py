@@ -53,7 +53,7 @@ list_iauname=['1652+398']
 
 n_data=len(list_objname)
 
-fig=plt.figure()
+fig=plt.figure(figsize=(12,9))
 
 #fig,axs=plt.subplots(4,7,figsize=(20,16))
 #fig.subplots_adjust(hspace=.5,wspace=0.5)
@@ -90,6 +90,7 @@ for i in range(n_data):
 
 
 plt.savefig('dat_Mkn501_201701_202010/dat_Mkn501_201701_202010.pdf') 
+plt.savefig('dat_Mkn501_201701_202010/dat_Mkn501_201701_202010.png') 
 
 print("... save file as dat_Mkn501_201701_202010.pdf ...")
 

@@ -80,7 +80,7 @@ print(till_month)
 #yearmonth='201802'
 yearmonth=sys.argv[1]
 
-file_info='gasp_target_fitsheader_info_exclude_baddata_'+yearmonth+'.txt'
+file_info='./data/gasp_target_fitsheader_info_exclude_baddata_'+yearmonth+'.txt'
 #file_info='gasp_target_fitsheader_info_exclude_baddata_202002.txt'
 if os.path.exists(file_info):
     os.remove(file_info)
@@ -111,7 +111,7 @@ f_log.write(str(print(sys.argv))+'\n')
 #cmd_search_folder1='find ./|grep calib_sci | grep slt20191[1-2]| cut -d / -f3 | sort |uniq'
 #cmd_search_folder1='find ./|grep calib_sci | grep slt2020[0-1][0-9]| cut -d / -f3 | sort |uniq'
 #cmd_search_folder1='find ./|grep calib_sci | grep slt202002| cut -d / -f3 | sort |uniq'
-cmd_search_folder1='find ./|grep calib_sci | grep slt'+yearmonth+'| cut -d / -f3 | sort |uniq'
+cmd_search_folder1='find ./data/|grep calib_sci | grep slt'+yearmonth+'| cut -d / -f3 | sort |uniq'
 f_log.write(cmd_search_folder1+'\n')
 list_folder1=os.popen(cmd_search_folder1,"r").read().splitlines()
 #cmd_search_folder2='find ./|grep calib_sci | grep slt2020[0-1][0-9]| cut -d / -f3 | sort |uniq'
@@ -159,33 +159,11 @@ f_log.write(' ---------------------------\n')
 f_log.write(' Science Target \n')
 f_log.write(' ---------------------------\n')
 
-'''
-cmd_search_n_file_sci="find ./20???? |grep 'fits\|fts'|grep GASP |sort |wc -l"
-
-cmd_search_n_row_till_month='cat '+file_info+'|grep '+till_month+' |tail -1 |cut -d "|" -f1'
-print(cmd_search_n_row_till_month)
-n_row_till_month=int(os.popen(cmd_search_n_row_till_month,"r").read().splitlines()[0])+1
-print(n_row_till_month)
-'''
-'''
-cmd_keep_row_till_month='cat '+file_info+' |head -'+str(n_row_till_month)
-print(cmd_keep_row_till_month)
-n_row_all=os.popen(cmd_search_n_row_all,"r").read().splitlines()
-print(n_row_all)
-n_row_need=n_row_all-n_row_till_month
-print(n_row_need)
-'''
-
-
-
-
-
-
 
 #cmd_search_file_sci1="find ./20191[1-2] |grep 'fits\|fts\|new'|grep calib_sci |sort "
 #cmd_search_file_sci1="find ./2020[0-1][0-9] |grep 'fits\|fts\|new'|grep calib_sci |sort "
 #cmd_search_file_sci1="find ./202002 |grep 'fits\|fts\|new'|grep calib_sci |sort "
-cmd_search_file_sci1="find ./"+yearmonth+" |grep 'fits\|fts\|new'|grep calib_sci |sort "
+cmd_search_file_sci1="find ./data/"+yearmonth+" |grep 'fits\|fts\|new'|grep calib_sci |sort "
 print(cmd_search_file_sci1)
 f_log.write(cmd_search_file_sci1+'\n')
 list_file_sci1=os.popen(cmd_search_file_sci1,"r").read().splitlines()
@@ -224,16 +202,6 @@ f_log.write(info_n_sci+'\n')
 
 #calib_sci={}
 
-'''
-cmd_search_baddata="cat ./bad_data_note.txt|cut -f1 "
-print(cmd_search_baddata)
-f_log.write(cmd_search_baddata+'\n')
-list_baddata=os.popen(cmd_search_baddata,"r").read().splitlines()
-print(list_baddata)
-n_baddata=len(list_baddata)
-print(n_baddata)
-f_log.write(str(list_baddata)+'\n')
-'''
 
 #df_baddata_note=pd.read_csv('bad_data_note.txt',sep='\t',skiprows=[0])
 df_baddata_note=pd.read_csv('bad_data_note.txt',sep='\t')

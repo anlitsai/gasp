@@ -1,12 +1,23 @@
 #a='202003'
-a=$1
+folder=$1
 
 #step0
-python search_no_wcs.py $a
+python search_no_wcs.py $folder
 # upload no_wcs_files to ycc and modify them
 
-b='wcsfixed_'$a
-cd $b
+./no_wcs_dir.sh $folder
+
+#./ycc_upload.sh $folder
+
+
+dir='wcsfixed_'$folder
+mkdir -p $dir
+cd $dir
+
+search_file='search_no_wcs_$folder.tx'
+
+a=`cat $search_file|grep fts|cut -d / -f2-9`
+
 ln -s ../cp_wcsfixed_file.sh ./
 ./cp_wcsfixed_file.sh
 

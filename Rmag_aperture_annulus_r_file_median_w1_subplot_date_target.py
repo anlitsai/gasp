@@ -128,6 +128,9 @@ idx_refstar=df_refstar[df_refstar['ObjectName']==obj_name].index.tolist()
 #print(idx_refstar)
 #sys.exit(0)
 
+iau_name=df_refstar.loc[df_refstar['ObjectName']==obj_name].iloc[0]['IAU_Name']
+
+
 n_refstar=len(idx_refstar)
 refstarID=['']*n_refstar
 #print('number of reference stars : ',n_refstar)
@@ -202,6 +205,7 @@ idx_fitsheader=df_info[((df_info['Object']==obj_name)|(df_info['Object'].str.con
 print('idx_fitsheader: ',idx_fitsheader)
 #obj_name=df_info['Object'][idx_fitsheader]
 
+dateobs=df_info['DateObs'][idx_fitsheader]
 fits_ori=df_info['Filename'][idx_fitsheader]
 #fits_ori=df_info['4.Filename'][idx_fitsheader]
 print(fits_ori)
@@ -216,8 +220,10 @@ df_cannotfit=df_baddata_note.loc[(df_baddata_note['NoteIdx']==3)].reset_index(dr
 n_cannotfit=len(df_cannotfit)
 print('... there are',n_cannotfit,'fits can not be fitted ...')
 list_cannotfit=df_cannotfit['filename'].tolist()
-# print(list_cannotfit)
+#print(list_cannotfit)
 
+
+#sys.exit(0)
 
 #idx_fitsheader
 #del idx_fitsheader[idx_cannotfit]
@@ -250,6 +256,7 @@ idx_fitsheader_cannotfit=idx_fitsheader[idx_cannotfit]
 ID_cannotfit=idx_fitsheader_cannotfit+1
 print(ID_cannotfit)
 n_idx_canfit=len(idx_fitsheader_canfit)
+print('... total ',n_idx_canfit,'good fits ...')
 n_cannotfit=len(idx_cannotfit)
 print('... drop',n_cannotfit,'bad fits ...')
 print()
@@ -361,6 +368,8 @@ for j2 in idx_refstar:
 dx=500
 dy=dx
 
+
+print(',idx_fitsheader_canfit',idx_fitsheader_canfit)
 #=======================
 
 k=0
@@ -368,28 +377,46 @@ for i in idx_fitsheader_canfit:
     print('=================================')   
     print('idx',i, ') ID =',ID[i],', #', k+1,'/',n_idx,'image of',obj_name)
     fits_root=fits_ori[i].split('.',-1)[0].split('_calib',-1)[0]
+    print('... fileroot :',fits_root)
     fits_calib=fits_root+'_calib.fits'
     print('... filename :',fits_calib)
-    #print(fits_root)
-    #print(fits_calib)
     #print(fits_ori)
 
 #   sys.exit(0)
-#    print(radec_deg)
-#    print(rmag)
-    date=fits_root.split('@',-1)[0].split('-',-1)[-1]
+
+    date=dateobs[i].strftime("%Y%m%d")
+
+#    cmd_search_file_date='find ./'+dir_master+' | grep fits | grep master_bias'
+#    print(cmd_search_file_date)
+#    file_date=os.popen(cmd_search_file_date,"r").read().splitlines()[0]
+
+    print("date : ",date)
     year=date[0:4]
     month=date[4:6]
     day=date[6:8]
-    yearmonth=date[0:6]
-#   sys.exit(0)
-    dir_file=yearmonth+'/slt'+date+'_calib_sci/'
+    yearmonth=year+month
+    print('yearmonth',yearmonth)
+
+    dir_file='data/'+yearmonth+'/slt'+date+'_calib_sci/'
+    print("dir_file = ",dir_file)
 #    dir_reg=yearmonth+'/slt'+date+'_reg/'
     hdu=fits.open(dir_file+fits_calib)[0]
     imhead=hdu.header
-    imdata=hdu.data    
+    imdata=hdu.data
     wcs = WCS(imhead)
 #    print(wcs)
+
+    '''
+    dateobs=imhead['DATE-OBS']
+    date=dateobs.split('T',-1)[0]
+    print("date : ",date)
+    year=date[0:4]
+    month=date[5:7]
+    day=date[8:10]
+    yearmonth=year+month
+    print('yearmonth',yearmonth)
+    '''
+#   sys.exit(0)
 
     calendar_date[k]=julian.from_jd(JD[i],fmt='jd')
     print('calendar_date',calendar_date[k])
@@ -940,6 +967,7 @@ df_out['ErrorFitting']=err_mag_fitting_per_img
 df_out['ErrorFitting']=df_out['ErrorFitting'].map('{:.4f}'.format)
 df_out['ErrorRmag']=err_mag_total_per_img
 df_out['ErrorRmag']=df_out['ErrorRmag'].map('{:.4f}'.format)
+#df_out['IAU_name']=iau_name
 
 
 #fmt="{:,.4f}"  # 1,234
@@ -1025,7 +1053,7 @@ JD_out_keep=df_Rmag_keep['JD'].map('{:.5f}'.format)
 Rmag_out_keep=df_Rmag_keep['Rmag'].map('{:.3f}'.format)
 eRmag_out_keep=df_Rmag_keep['ErrorRmag'].map('{:.3f}'.format)
 
-iau_name=df_refstar.loc[df_refstar['ObjectName']==obj_name].iloc[0]['IAU_Name']
+#iau_name=df_refstar.loc[df_refstar['ObjectName']==obj_name].iloc[0]['IAU_Name']
 #iau_name=df_refstar.loc[df_refstar['ObjectName'].str.contains(obj_name)].iloc[0]['IAU_Name']
 #print('ObjectName: ',obj_name)
 #print('IAU_Name: ',iau_name)

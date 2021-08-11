@@ -17,7 +17,7 @@ for example:
 $ python slt_calibration_science_target.py slt20190822
 """
 
-dir_root='/home/altsai/project/20190801.NCU.EDEN/data/gasp/'
+dir_root='/home/altsai/project/20190801.NCU.EDEN/data/gasp/data/'
 #dir_root='/home/altsai/gasp/lulin_data/2019/slt/'
 
 #folder='slt201908'
@@ -50,13 +50,20 @@ folder=sys.argv[1]
 #folder='slt20191201'
 #print("Which Folder you are going to process ?")
 #folder=input("Enter a Folder (ex: slt20190822): ")
+#print('folder',folder)
 date=folder[3:]
+#print('date',date)
 year=str(date[0:4])
+#print('year',year)
 month=str(date[4:6])
+#print('month',month)
 yearmonth=year+month
+#print('yearmonth',yearmonth)
 day=str(date[6:8])
 #folder='slt'+date
-dir_folder=yearmonth+'/'+folder+'/'
+dir_folder='data/'+yearmonth+'/'+folder+'/'
+
+#sys.exit(0)
 
 '''
 print("Which Date you are going to process ?")
@@ -71,35 +78,17 @@ dir_folder=yearmonth+'/'+folder+'/'
 
 #folder=sys.argv[1]
 #folder='slt201908'
-dir_master=yearmonth+'/slt'+yearmonth+'_master/'
+dir_master='data/'+yearmonth+'/slt'+yearmonth+'_master/'
 #dir_master='data/'+yearmonth+'/slt'+yearmonth+'_master/'
 print(dir_master)
 
-dir_calib_sci=yearmonth+'/'+folder+'_calib_sci/'
+dir_calib_sci='data/'+yearmonth+'/'+folder+'_calib_sci/'
 #dir_calib_sci='data/'+yearmonth+'/'+folder+'_calib_sci/'
 
 print(dir_calib_sci)
 if os.path.exists(dir_calib_sci):
     shutil.rmtree(dir_calib_sci)
 os.makedirs(dir_calib_sci,exist_ok=True)
-
-
-'''
-if os.path.exists(dir_master):
-    shutil.rmtree(dir_master)
-os.makedirs(dir_master,exist_ok=True)
-
-folder='slt20190822'
-#folder=sys.argv[1]
-#print(folder)
-month=folder[3:9]
-date=folder[-2:]
-#print(month)
-dir_master=folder[0:-2]+'_master/'
-#print(dir_master)
-dir_calib_sci=folder+'_calib_sci/'
-#print(dir_calib_sci)
-'''
 
 print('... will calibrate science target on '+date+' ...')
 
@@ -121,7 +110,7 @@ print(' ---------------------------')
 print(' Load Master Bias ')
 print(' ---------------------------')
 
-cmd_search_file_bias='find ./ | grep '+dir_master+' | grep fits | grep master_bias'
+cmd_search_file_bias='find ./'+dir_master+' | grep fits | grep master_bias'
 print(cmd_search_file_bias)
 file_bias=os.popen(cmd_search_file_bias,"r").read().splitlines()[0]
 #print(file_bias)
@@ -140,10 +129,8 @@ print(' ---------------------------')
 print(' Load Master Dark ')
 print(' ---------------------------')
 
-
-
-cmd_search_file_dark='find ./ | grep '+dir_master+' | grep fits | grep master_dark'
-#print(cmd_search_file_dark)
+cmd_search_file_dark='find ./'+dir_master+' | grep fits | grep master_dark'
+print(cmd_search_file_dark)
 file_dark=os.popen(cmd_search_file_dark,"r").read().splitlines()[0]
 #print(list_file_dark)
 
@@ -159,94 +146,8 @@ data=fits.open(file_dark)[0].data
 master_dark=data
 #    print('--------')
 
-'''
-master_dark={}
+print('...load master dark: '+file_dark+'...')
 
-cmd_search_file_dark='find ./'+dir_master+' | grep fits | grep master_dark'
-#print(cmd_search_file_dark)
-list_file_dark=os.popen(cmd_search_file_dark,"r").read().splitlines()
-#print(list_file_dark)
-
-for i in list_file_dark:
-#    print(i)
-    cmd_filename_dark='echo '+i+' | cut -d / -f3'
-    filename_master_dark=os.popen(cmd_filename_dark,"r").read().splitlines()[0]
-    print('...load master dark file: '+filename_master_dark+'...')
-    cmd_idx_dark_time='echo '+i+' | cut -d / -f3 | cut -d _ -f3'
-#    print(cmd_idx_dark_time)
-    idx_master_dark_time=os.popen(cmd_idx_dark_time,"r").read().splitlines()[0]
-#    print(idx_master_dark_time)
-    data=fits.open(i)[0].data
-#    print(data)
-    master_dark[idx_master_dark_time]=data
-#    print('--------')
-  '''  
-#print('300S')
-#print(master_dark['300S'])
-
-#sys.exit(0)
-
-
-
-'''
-print(' ---------------------------')
-print(' Load Master Flat ')
-print(' ---------------------------')
-
-cmd_search_file_flat='find ./ | grep '+dir_master+' | grep fits | grep master_flat'
-print(cmd_search_file_flat)
-list_file_flat=os.popen(cmd_search_file_flat,"r").read().splitlines()[0]
-print(list_file_flat)
-
-master_flat={}
-cmd_search_file_flat='find ./'+dir_master+' | grep fits | grep master_flat'
-print(cmd_search_file_flat)
-list_file_flat=os.popen(cmd_search_file_flat,"r").read().splitlines()
-print(list_file_flat)
-
-for i in list_file_flat:
-#    print(i)
-    cmd_idx_flat_filter='echo '+i+' | cut -d / -f4 '
-    print(cmd_idx_flat_filter)
-    filename_flat=os.popen(cmd_idx_flat_filter,"r").read().splitlines()[0]
-    print('...load master flat file: '+filename_flat+'...')
-    cmd_idx_flat_filter='echo '+i+' | cut -d / -f4 | cut -d _ -f3'
-    print(cmd_idx_flat_filter)
-    idx_master_flat_filter=os.popen(cmd_idx_flat_filter,"r").read().splitlines()[0]
-    print(idx_master_flat_filter)
-    data=fits.open(i)[0].data
-#    print(data)
-    master_flat[idx_master_flat_filter]=data
-#    print('--------')
-'''
-
-
-
-'''
-master_flat={}
-
-cmd_search_file_flat='find ./'+dir_master+' | grep fits | grep master_flat'
-#print(cmd_search_file_flat)
-list_file_flat=os.popen(cmd_search_file_flat,"r").read().splitlines()
-#print(list_file_flat)
-
-for i in list_file_flat:
-#    print(i)
-    cmd_filename_flat='echo '+i+' | cut -d / -f3 '
-#    print(cmd_idx_flat_filter)
-    filename_flat=os.popen(cmd_filename_flat,"r").read().splitlines()[0]
-    print('...load master flat file: '+filename_flat+'...')
-    cmd_idx_flat_filter='echo '+i+' | cut -d / -f3 | cut -d _ -f3-4'
-#    print(cmd_idx_flat_filter)
-    idx_master_flat_filter=os.popen(cmd_idx_flat_filter,"r").read().splitlines()[0]
-#    print(idx_master_flat_filter)
-    data=fits.open(i)[0].data
-#    print(data)
-    master_flat[idx_master_flat_filter]=data
-#    print('--------')
-''' 
-#print('gp_015S')
-#print(master_flat['gp_015S'])
 
 #sys.exit(0)
 
@@ -256,7 +157,7 @@ print(' ---------------------------')
 
 print(folder)
 #cmd_search_file_sci="find ./ | grep "+dir_folder+" | grep fts | grep GASP "
-cmd_search_file_sci="find ./ | grep "+dir_folder+" | grep 'fts\|new' | grep GASP "
+cmd_search_file_sci="find ./"+dir_folder+" | grep 'fts\|new' | grep GASP "
 list_file_sci=os.popen(cmd_search_file_sci,"r").read().splitlines()
 print('...calibrating science targets...')
 print(list_file_sci)
@@ -302,16 +203,18 @@ for i in list_file_sci:
     dec=imhead['Dec']
     select_master_dark=master_dark
     filter_name=imhead['FILTER']
-    print('... load master flat ...')
+    print(' ---------------------------')
+    print(' Load Master Dark ')
+    print(' ---------------------------')
 #    print(cmd_search_file_flat)
     #cmd_sci_filter='echo '+filter_name+' | cut -d _ -f1'
     sci_filter=filter_name.split('_',-1)[0]
 #    print(sci_filter)
-    cmd_search_file_flat='find ./ | grep '+dir_master+' | grep '+sci_filter
+    cmd_search_file_flat='find ./'+dir_master+' | grep '+sci_filter
 #    print(cmd_search_file_flat)
 #    filename_flat=os.popen(cmd_filename_flat,"r").read().splitlines()[0]
     file_sci_filter=os.popen(cmd_search_file_flat,"r").read().splitlines()[0]
-    print('... master flat file is: '+file_sci_filter+' ...')
+    print('... load master flat file is: '+file_sci_filter+' ...')
 #    idx_filter_time=sci_filter+"_"+idx_time
 #    print(idx_filter_time)
     data_flat=fits.open(file_sci_filter)[0].data
@@ -326,8 +229,8 @@ for i in list_file_sci:
 #    print(select_master_flat.shape)
 #    print(select_master_dark.shape)
 #    print(sci_flat.shape)
-    cmd_sci_name='echo '+i+' | cut -d / -f6 | cut -d . -f1'
-#    cmd_sci_name='echo '+i+' | cut -d / -f7 | cut -d . -f1'
+#    cmd_sci_name='echo '+i+' | cut -d / -f6 | cut -d . -f1'
+    cmd_sci_name='echo '+i+' | cut -d / -f7 | cut -d . -f1'
 #    print(cmd_sci_name)
     sci_name=os.popen(cmd_sci_name,"r").read().splitlines()[0]
 #    print(sci_name)

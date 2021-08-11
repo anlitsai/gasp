@@ -82,7 +82,7 @@ date2=sys.argv[2]
 #date2='20191031'
 
 
-file_info='gasp_target_fitsheader_info_exclude_baddata_'+date1+'-'+date2+'.txt'
+file_info='./data/gasp_target_fitsheader_info_exclude_baddata_'+date1+'-'+date2+'.txt'
 if os.path.exists(file_info):
     os.remove(file_info)
 f_info=open(file_info,'w')

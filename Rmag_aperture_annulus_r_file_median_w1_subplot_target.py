@@ -71,6 +71,11 @@ print('... will read '+file_info+' ...')
 df_info=pd.read_csv(file_info,delimiter='|')
 print(df_info)
 
+#file_iau='iau_name.txt'
+#print('... will read '+file_iau+' ...')
+#df_iau=pd.read_csv(file_iau,delimiter='|')
+#print(df_iau)
+
 #obj_name='3C66A'
 #obj_name='3C345'
 #obj_name='3C279'
@@ -81,9 +86,11 @@ print(df_info)
 #obj_name='4C29-45'
 #obj_name='Mkn421'
 #obj_name='AO0235+16'
-obj_name='DA406'
+#obj_name='DA406'
 
 obj_name=sys.argv[1]
+#iau_name=df_iau[df_iau['obj_name']==obj_name]
+#print('iau_name',iau_name)
 
 
 dir_obj='Rmag_InstMag/annu_w1/'+obj_name+'/'
@@ -100,6 +107,8 @@ df_refstar=pd.read_csv(file_refstar,sep='|')
 #print(df_refstar)
 idx_refstar=df_refstar[df_refstar['ObjectName']==obj_name].index.tolist()
 #print(idx_refstar)
+iau_name=df_refstar.loc[df_refstar['ObjectName']==obj_name].iloc[0]['IAU_Name']
+
 n_refstar=len(idx_refstar)
 refstarID=['']*n_refstar
 #print('number of reference stars : ',n_refstar)
@@ -151,11 +160,11 @@ print('-----------------------')
 #ID_selected=np.array([1436,1437,1438,1439])   # ES2344+514
 #ID_selected=np.array([988,989]) # 4C29-45
 #ID_selected=np.array([963,964,991,992])   # 3C279
-ID_selected=np.array([687,688,995,996])   # 4C71-07
+#ID_selected=np.array([687,688,995,996])   # 4C71-07
 #ID_selected=np.array([689,690,997,998])   # Mkn421
 #ID_selected=np.array([1527,1528,1533,1534])  #AO0235+16
 
-idx_fitsheader=ID_selected-1
+#idx_fitsheader=ID_selected-1
 idx_fitsheader=df_info[df_info['Object']==obj_name].index
 print(idx_fitsheader)
 #obj_name=df_info['Object'][idx_fitsheader]
@@ -892,13 +901,15 @@ df_out['ErrorFitting']=err_mag_fitting_per_img
 df_out['ErrorFitting']=df_out['ErrorFitting'].map('{:.4f}'.format)
 df_out['ErrorRmag']=err_mag_total_per_img
 df_out['ErrorRmag']=df_out['ErrorRmag'].map('{:.4f}'.format)
-
+df_out['IAU_name']=iau_name
 
 #fmt="{:,.4f}"  # 1,234
 #fmt="{:.4f}"  # 1234
 #df_out.style.format({'RA_deg':fmt,'DEC_deg':fmt,'RA_pix':fmt,'DEC_pix':fmt,'Zmag':fmt,'FWHM':fmt,'Altitude':fmt,'Airmass':fmt,'Rmag':fmt,'ErrorCounts':fmt,'ErrorInstMag':fmt,'ErrorFitting':fmt,'ErrorMagTotal':fmt})
 #df_out.style.format({'Rmag':fmt,'ErrorCounts':fmt,'ErrorInstMag':fmt,'ErrorFitting':fmt,'ErrorMagTotal':fmt})
 
+df_out.reset_index(drop=True)
+df_out=df_out.drop(['Unnamed: 0'],axis=1)
 print(df_out)
 file_Rmag_out_full=dir_obj+'Rmag_aperture_'+obj_name+'_annu.txt'
 df_out.to_csv(file_Rmag_out_full,sep='|')
@@ -974,7 +985,6 @@ df_Rmag_keep=df_out_keep[['JD','Rmag','ErrorRmag']].astype(float) #.reset_index(
 #df_Rmag_keep['JD']=df_Rmag_keep['JD'].map('{:.4f}'.format)
 df_Rmag_keep['Observatory']='LulinSLT'
 
-iau_name=df_refstar.loc[df_refstar['ObjectName']==obj_name].iloc[0]['IAU_Name']
 print(df_Rmag_keep)
 #file_Rmag_out_keep=dir_obj+'Rmag_'+obj_name+'.txt'
 file_Rmag_out_keep=dir_obj+'gasp_'+iau_name+'.dat'

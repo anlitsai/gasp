@@ -1,7 +1,7 @@
 #a='202003'
 a=$1
 
-b=`find ./|grep $a[0-3][0-9]$|cut -d / -f3|sort|uniq`
+b=`find ./data/|grep $a[0-3][0-9]$|cut -d / -f4|sort|uniq`
 echo $b
 for j in $b;do
   echo $j

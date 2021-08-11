@@ -1,3 +1,4 @@
+aaa
 old_code/*
 20*/*
 astrometry*/*
@@ -35,3 +36,7 @@ error
 *v[2-6].sh
 *pdf
 *ps
+data/20*
+data/no_wcs*
+data/wcsfixed*
+

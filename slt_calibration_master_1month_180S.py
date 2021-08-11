@@ -515,24 +515,56 @@ cmd_search_dark_time='find ./ |grep '+dir_month+' | grep fts | grep Dark | cut -
 list_dark_time=os.popen(cmd_search_dark_time,"r").read().splitlines()
 #print(list_dark_time)
 '''
+array_each_dark=[]
 cmd_search_dark='find ./ |grep '+dir_month+' | grep fts | grep Dark | grep 180S'
 print(cmd_search_dark)
 list_file_dark=os.popen(cmd_search_dark,"r").read().splitlines()
 print(list_file_dark)
-
+n_dark=len(list_file_dark)
 #sys.exit(0)
+print('number of total dark:',n_dark)
+#sys.exit(0)
+#array_each_bias=np.array([pyfits.getdata(i) for i in list_file_bias])
+#array_each_bias=np.array([fits.open(i)[0].data for i in list_file_bias])
+n_dark_2048=0
+for i in range(n_dark):
+    j=list_file_dark[i]
+#    print(j)
+    imdata=fits.open(j)[0].data
+    imhead=fits.open(j)[0].header
+    nx=imhead['NAXIS1']
+#    print('NAXIS1',nx)
+    if nx==2048:
+        array_each_dark.append(imdata)
+        n_dark_2048=n_dark_2048+1
+array_each_dark=np.array(array_each_dark,dtype=int)
+print(array_each_dark)
+#print(type(array_each_dark))
+
+del list_file_dark
+
+print('number of selected dark:',n_dark_2048)
+
+#print(array_each_dark.shape)
+#n_arr_bias=(array_each_dark.shape[0])
+#n_arr_bias=len(array_each_dark)
+print('number of total px: 2048x2048x',n_dark_2048,' = ', 2048*2048*n_dark_2048)
+
+
+
 
 #print('...start to remove outlier dark...')
 
 #master_dark={}
 
-array_dark=np.array([fits.open(j)[0].data for j in list_file_dark])
+#array_dark=np.array([fits.open(j)[0].data for j in list_file_dark])
 #print('...remove outlier data...')
 #dark_keep=reject_outliers_data(array_dark,par1)
 #    dark_each_time_keep2=reject_outliers_data(dark_each_time_keep,3)
 #    print(dark_keep)
 print('...generate master dark...')
-dark_subtract=array_dark-master_bias
+#dark_subtract=array_dark-master_bias
+dark_subtract=array_each_dark-master_bias
 mean_dark=np.mean(dark_subtract,axis=0)
 #print('...remove outlier pixel...')
 #mean_dark_keep=reject_outliers_px(mean_dark,par2)
@@ -554,8 +586,9 @@ hdu.writeto(dir_master+fitsname_master_dark,overwrite=True)
 #    imhead.add_history('Master bias is applied at '+now+' UTC')
 #    fits.writeto(fitsname_master_dark,data=master_dark_each_time,header=imhead,overwrite=True)
 
-del list_file_dark
-del array_dark
+#del list_file_dark
+del array_each_dark
+#del array_dark
 
 #sys.exit(0)
 
@@ -568,8 +601,11 @@ print(' ---------------------------')
 
 #cmd_search_sci_filter="find ./ |grep "+dir_month+" |grep fts | grep flat | cut -d / -f5 | awk -F'_Astro' '{print $1}'| rev | cut -c1-3 | rev | cut -d - -f2 | sort | uniq"
 #cmd_search_sci_filter="find ./ |grep "+dir_month+" |grep GASP| grep fts | rev | cut -d - -f1 | cut -d _ -f3 | rev| sort | uniq"
-cmd_search_sci_filter="find ./ |grep "+dir_month+" | grep GASP | cut -d / -f6 | grep fts|cut -d '@' -f2 | cut -d _ -f1 | cut -d - -f2 | sort | uniq"
 #cmd_search_sci_filter="find ./ |grep "+dir_month+" | grep GASP | cut -d / -f7 | grep fts|cut -d '@' -f2 | cut -d _ -f1 | cut -d - -f2 | sort | uniq"
+#cmd_search_sci_filter="find ./ |grep "+dir_month+" | grep GASP | cut -d / -f6 | grep fts|cut -d '@' -f2 | cut -d _ -f1 | cut -d - -f2 | sort | uniq"
+cmd_search_sci_filter="find ./ |grep "+dir_month+" | grep GASP | cut -d / -f6 | grep fts|awk -F'20[0-9][0-9][0-9][0-9][0-9][0-9][@,_][0-9][0-9][0-9][0-9][0-9][0-9]-' '{print $2}'|cut -d _ -f1 |sort | uniq"
+
+array_each_flat=[]
 
 print(cmd_search_sci_filter)
 list_flat_filter=os.popen(cmd_search_sci_filter,"r").read().splitlines()
@@ -578,67 +614,102 @@ print('all filter: ',list_flat_filter)
 
 
 #list_flat_filter=['R']
-for i in list_flat_filter:
-    print('filter',i)
+#for i in list_flat_filter:
+#    print('filter',i)
 
 
 #sys.exit(0)
 
 
 
-master_flat={}
+#master_flat={}
 #print(master_flat)
 #awk -F'PANoRot-' '{print $2}'|cut -d _ -f1
-for i in list_flat_filter:
-    cmd_search_file_flat='find ./ |grep '+dir_month+' | grep fts | grep flat | grep PANoRot-'+i
-    print(cmd_search_file_flat)
-    list_file_flat=os.popen(cmd_search_file_flat,"r").read().splitlines()
-    print('filter: ', i)
-    print('file list',list_file_flat)
+#for i in list_flat_filter:
+
+#cmd_search_file_flat='find ./ |grep '+dir_month+' | grep fts | grep flat | grep PANoRot-'+i
+cmd_search_file_flat='find ./ |grep '+dir_month+' | grep fts | grep flat | grep PANoRot-R'
+print(cmd_search_file_flat)
+list_file_flat=os.popen(cmd_search_file_flat,"r").read().splitlines()
+#print('filter: ', i)
+print('filter: R')
+print('file list',list_file_flat)
 #    print(len(list_file_flat))
+
+n_flat=len(list_file_flat)
+print('number of total flat:',n_flat)
+#sys.exit(0)
+n_flat_2048=0
+for i in range(n_flat):
+    j=list_file_flat[i]
+#        print(j)
+    imdata=fits.open(j)[0].data
+    imhead=fits.open(j)[0].header
+    nx=imhead['NAXIS1']
+#        print('NAXIS1',nx)
+    if nx==2048:
+        array_each_flat.append(imdata)
+        n_bias_2048=n_flat_2048+1
+array_each_flat=np.array(array_each_flat,dtype=int)
+print(array_each_flat)
+#    print(type(array_each_flat))
+
+del list_file_flat
+
+print('number of selected flat:',n_flat_2048)
+
+print('number of total px: 2048x2048x',n_flat_2048,' = ', 2048*2048*n_flat_2048)
+
     #array_flat=np.array([pyfits.getdata(j) for j in list_file_flat])
-    array_flat=np.array([fits.open(j)[0].data for j in list_file_flat])
+#    array_flat=np.array([fits.open(j)[0].data for j in list_file_flat])
 #    print(array_flat.shape)
 #    print('...remove outlier data...')
 #    flat_keep=reject_outliers_at_same_px(array_flat)
 #    flat_keep2=reject_outliers_data(flat_keep,par2)
-    print('...generate master flat '+i+'...')
-    print('master bias: ', master_bias.shape)
-    print('master dark: ', master_dark.shape)
-    print('array flat: ',array_flat.shape) 
+#print('...generate master flat '+i+'...')
+print('...generate master flat R...')
+print('master bias: ', master_bias.shape)
+print('master dark: ', master_dark.shape)
+#print('array flat: ',array_flat.shape) 
+print('array flat: ',array_each_flat.shape) 
 #    mean_flat=np.nanmean(flat_keep-master_bias-master_dark,axis=0)  
-    mean_flat=np.mean(array_flat,axis=0)  
+mean_flat=np.mean(array_each_flat,axis=0)  
 #        print(np.amax(mean_flat_each_filter))
 #    print('...remove outlier pixel...')
 #    mean_flat_keep=reject_outliers2_px(mean_flat,par3)
-    min_value_flat=np.nanmin(mean_flat)
-    max_value_flat=np.nanmax(mean_flat)
-    mean_value_flat=np.mean(mean_flat)
-    print('min, max =',min_value_flat,max_value_flat)
-    flat_subtract=mean_flat-master_bias-master_dark
+min_value_flat=np.nanmin(mean_flat)
+max_value_flat=np.nanmax(mean_flat)
+mean_value_flat=np.mean(mean_flat)
+print('min, max =',min_value_flat,max_value_flat)
+flat_subtract=mean_flat-master_bias-master_dark
     #norm_mean_flat=(mean_flat-min_value)/(max_value-min_value)
 #    flat_subtract=mean_flat-master_bias-master_dark
 #    norm_mean_flat=(mean_flat-min_value)/(max_value-min_value)  #max_value
-    norm_mean_flat=mean_flat/mean_value_flat  #normalized to mean value
+norm_mean_flat=mean_flat/mean_value_flat  #normalized to mean value
 #        print(np.amax(norm_mean_flat_each_filter))
-    master_flat[i]=norm_mean_flat
+#master_flat[i]=norm_mean_flat
+master_flat=norm_mean_flat
 #        print(master_flat[idx_filter_time])
 #    print(mean_flat_each_filter[1000][1000])
 #    plt.title('Master Flat '+i)
 #    plt.imshow(mean_flat_each_filter)
 #    plt.show()
-    print('...output master flat '+i+' to fits file...')
-    fitsname_master_flat='master_flat_'+i+'_180S_'+dir_month+'.fits'
-    hdu=fits.PrimaryHDU(master_flat[i])
+#print('...output master flat '+i+' to fits file...')
+print('...output master flat R to fits file...')
+#fitsname_master_flat='master_flat_'+i+'_180S_'+dir_month+'.fits'
+fitsname_master_flat='master_flat_R_180S_'+dir_month+'.fits'
+#hdu=fits.PrimaryHDU(master_flat[i])
+hdu=fits.PrimaryHDU(master_flat)
 #        now=str(datetime.now())  
 #        fits.header.add_history('Master Flat generated at '+now+' UTC')
-    hdu.writeto(dir_master+fitsname_master_flat,overwrite=True)
+hdu.writeto(dir_master+fitsname_master_flat,overwrite=True)
 #        imhead.add_history('Master bias, dark are applied at '+now+' UTC')
 #        fits.writeto(fitsname_master_flat,data=norm_mean_flat_each_filter,header=imhead,overwrite=True)
 
 del list_flat_filter
-del list_file_flat
-del array_flat
+#del list_file_flat
+del array_each_flat
+#del array_flat
 
 print('... finished ...')
 
