@@ -1596,4 +1596,5 @@ S4_0954+65-20210726_131701-R_Astrodon_2018.fits	2	faint,bigerr(R=16.08,dR=0.23)
 S4_0954+65-20210726_132026-R_Astrodon_2018.fits	2	faint,bigerr(R=16.17,dR=0.22)
 S5_0716+71-20210726_194331-R_Astrodon_2018.fits	2	faint,outlier(R=13.34,dR=0.07)
 S5_0716+71-20210726_194654-R_Astrodon_2018.fits	2	faint,outlier(R=13.37,dR=0.06)
+BL-Lacertae-20210815_174316-R_Astrodon_2018.fts	2	shift(R=12.00,dR=0.06)
 

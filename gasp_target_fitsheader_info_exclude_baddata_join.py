@@ -49,9 +49,10 @@ df30=pd.read_csv('./data/gasp_target_fitsheader_info_exclude_baddata_202104.txt'
 df31=pd.read_csv('./data/gasp_target_fitsheader_info_exclude_baddata_202105.txt',sep='|')
 df32=pd.read_csv('./data/gasp_target_fitsheader_info_exclude_baddata_202106.txt',sep='|')
 df33=pd.read_csv('./data/gasp_target_fitsheader_info_exclude_baddata_202107.txt',sep='|')
+df34=pd.read_csv('./data/gasp_target_fitsheader_info_exclude_baddata_202108.txt',sep='|')
 
 #df_all=pd.concat([df01,df02,df03,df04,df05,df06,df07,df08,df09,df10,df11,df12,df13,df14,df15,df16,df17,df18,df19,df20,df21,df22,df23,df24,df25,df26,df27,df28,df29,df30,df31,df32]).reset_index(drop=True)
-df_all=pd.concat([df01,df02,df03,df04,df05,df06,df07,df08,df09,df10,df11,df12,df13,df14,df15,df27,df28,df29,df30,df31,df32,df33]).reset_index(drop=True)
+df_all=pd.concat([df01,df02,df03,df04,df05,df06,df07,df08,df09,df10,df11,df12,df13,df14,df15,df27,df28,df29,df30,df31,df32,df33,df34]).reset_index(drop=True)
 #print(df_all)
 #print(df_all.ID)
 

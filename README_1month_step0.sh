@@ -14,7 +14,7 @@ dir='wcsfixed_'$folder
 mkdir -p $dir
 cd $dir
 
-search_file='search_no_wcs_$folder.tx'
+search_file='search_no_wcs_$folder.txt'
 
 a=`cat $search_file|grep fts|cut -d / -f2-9`
 

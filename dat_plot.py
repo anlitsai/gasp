@@ -72,7 +72,8 @@ for i in range(n_data):
     
 
 #    axs[i].errorbar(JD0,R0,yerr=eR0,linestyle='--',label='no w',lw=1)
-    axs[i].errorbar(JD1,R1,yerr=eR1,linestyle='--',lw=1)  
+#    axs[i].errorbar(JD1,R1,yerr=eR1,linestyle='--',lw=1)  
+    axs[i].errorbar(JD1,R1,yerr=eR1,lw=1)  
     axs[i].set_xlabel('JD')
     axs[i].set_ylabel('Rmag')
     axs[i].set_title(file_obj)
